@@ -530,9 +530,9 @@ valine:
   appid: clQL1DEsR3bFuRqUL22GdvLU-gzGzoHsz # your leancloud application appid
   appkey: 0WPBlnil4NegnJaSrAVPSPqK # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
+  verify: true # Verification code
   placeholder: 说点什么 # comment box placeholder
-  avatar: mm # gravatar style
+  avatar: hide # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
