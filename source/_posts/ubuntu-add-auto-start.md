@@ -14,10 +14,10 @@ tages: [linux]
 
 1. 搜索“启动应用程序”并打开（英文系统搜索“startup application“）
 
-![](http://qiniu1.letow.top/2018-08-07%2014-30-48%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![](http://qiniu1.letow.top/2018-08-07%2014-30-48%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.jpg)
 
 2. 添加你需要开机自启的软件即可
 
-![](http://qiniu1.letow.top/2018-08-07%2014-30-57%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![](http://qiniu1.letow.top/2018-08-07%2014-30-57%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.jpg)
 
 

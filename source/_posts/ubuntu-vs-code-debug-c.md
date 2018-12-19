@@ -5,7 +5,7 @@ tags: [Linux, vs code]
 ---
 稍微试了下用 vs code 编写 c++ 程序，感觉还不错。这里给出一些调试相关的经验。
 
-![](http://qiniu1.letow.top/2018-08-11%2010-46-52%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![](http://qiniu1.letow.top/2018-08-11%2010-46-52%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.jpg)
 
 <!--more-->
 
@@ -17,7 +17,7 @@ tags: [Linux, vs code]
 
 点击工具栏的第四个按钮，即调试按钮，然后点击绿色的调试按钮，会自动添加一份配置文件 `launch.json`。
 
-![](http://qiniu1.letow.top/2018-08-11%2010-53-18%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![](http://qiniu1.letow.top/2018-08-11%2010-53-18%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.jpg)
 
 修改配置文件的 `program` 项：
 
@@ -45,11 +45,11 @@ g++ 编译默认输出的文件名为 `a.out`，如果想要指定名称，可�
 
 按下快捷键 `Ctrl + Shift + B`，这是 vs code 中的运行生成任务的快捷键，由于没有配置文件，所以会提醒你新建配置文件。
 
-![](http://qiniu1.letow.top/2018-08-11%2011-11-52%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![](http://qiniu1.letow.top/2018-08-11%2011-11-52%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.jpg)
 
 选择任务的模板为 `Others`。
 
-![](http://qiniu1.letow.top/2018-08-11%2011-12-03%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![](http://qiniu1.letow.top/2018-08-11%2011-12-03%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.jpg)
 
 生成之后，返回源文件再次按下快捷键，会提示没有找到要运行的生成文件，点击确认即可。这样就将这个项目的全部生成任务设置为了那个配置文件。
 
@@ -98,4 +98,4 @@ g++ 编译默认输出的文件名为 `a.out`，如果想要指定名称，可�
 
 
 
-![](http://qiniu1.letow.top/2018-08-11%2011-34-45%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png)
+![](http://qiniu1.letow.top/2018-08-11%2011-34-45%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.jpg)
