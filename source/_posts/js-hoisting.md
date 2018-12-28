@@ -62,6 +62,28 @@ console.log(x); // Uncaught ReferenceError: x is not defined
 
 x 被困在暂时死区中，此后该作用域中 x 无法使用。
 
+## 函数提升
+
+在红宝书上看到了这个概念，区别函数提升与变量提升：
+
+```javascript
+alert(sum(10,10)); // TypeError: sum is not a function
+var sum = function(num1, num2) {
+  return num1 + num2;
+};
+```
+
+以上代码会报错，因为虽然 sum 被提升了，但是初始化在后面。
+
+```javascript
+alert(sum(10,10));
+function sum(num1, num2) {
+  return num1 + num2;
+}
+```
+
+相应的，直接声明函数的形式，因为函数提升直接初始化，所以代码正确运行。
+
 ## 参考
 
 [我用了两个月的时间才理解 let](https://zhuanlan.zhihu.com/p/28140450)
