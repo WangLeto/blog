@@ -2,6 +2,7 @@
 title: 一步步实现网页图片的手势拖拽与缩放
 date: 2019-02-01 08:43:51
 tags: [JavaScript]
+mathjax: true
 ---
 
 最终效果如下：
@@ -308,45 +309,45 @@ img.addEventListener('touchmove', e => {
 
 
 
-可以看到，A' 点的坐标变为了 \\((5, 3)\\)。其实现在从数值上已经可以看出一点端倪了，但是让我们来做一点抽象归纳。
+可以看到，A' 点的坐标变为了 $(5, 3)$。其实现在从数值上已经可以看出一点端倪了，但是让我们来做一点抽象归纳。
 
-首先，将基点 O 设为 \\(O = (o_x, o_y)\\)。此时如果点 A 坐标为 \\((x, y)\\) ，缩放倍率为 **s**。用向量来表示点 A 到基点的距离就是：
+首先，将基点 O 设为 $O = (o_x, o_y)$。此时如果点 A 坐标为 $(x, y)$ ，缩放倍率为 **s**。用向量来表示点 A 到基点的距离就是：
 
 $$
 \overrightarrow{OA}=(x-o_x,y-o_y)
 $$
 
-那么此时点 A' 到基点的距离正是 \\(\overrightarrow{OA}\\) 的 **s** 倍：
+那么此时点 A' 到基点的距离正是 $\overrightarrow{OA}$ 的 **s** 倍：
 
 $$
 \overrightarrow{OA'}=(s\cdot(x-o_x),s\cdot(y-o_y))
 $$
 
-点 A' 的坐标即 \\(\overrightarrow{OA'}\\) 的值加上点 O 的坐标：
+点 A' 的坐标即 $\overrightarrow{OA'}$ 的值加上点 O 的坐标：
 
 $$
 A'=(s\cdot(x-o_x)+o_x,s\cdot(y-o_y)+o_y)
 $$
 
-如果我们移动基点 O，现在点 O 的坐标变为了：\\(O=(o_x',o_y')\\)。我们并没有改变坐标系参考点，点 A 的坐标仍是 \\((x, y)\\)，此时点 A 到基点 O 的距离为：
+如果我们移动基点 O，现在点 O 的坐标变为了：$O=(o_x',o_y')$。我们并没有改变坐标系参考点，点 A 的坐标仍是 $(x, y)$，此时点 A 到基点 O 的距离为：
 
 $$
 \overrightarrow{OA}=(x-o_x',y-o_y')
 $$
 
-而新由点 A 变换得到的点 A'' 到基点 O 的距离 \\(\overrightarrow{OA}\\) 的 **s** 倍）就变成了：
+而新由点 A 变换得到的点 A'' 到基点 O 的距离 $\overrightarrow{OA}$ 的 **s** 倍）就变成了：
 
 $$
 \overrightarrow{OA''}=(s\cdot(x-o_x'),s\cdot(y-o_y'))
 $$
 
-此时点 A'' 的坐标是 \\(\overrightarrow{OA''}\\) 加上点 O 的坐标：
+此时点 A'' 的坐标是 $\overrightarrow{OA''}$ 加上点 O 的坐标：
 
 $$
 A''=(s\cdot(x-o_x')+o_x',s\cdot(y-o_y')+o_y')
 $$
 
-也就是说，将基点 O 从 \\((o_x, o_y)\\)，记增量为 \\((\Delta{o_x},\Delta{o_y})\\)，导致了点 A 的变换结果，从 \\((s\cdot(x-o_x)+o_x,s\cdot(y-o_y)+o_y)\\) ，变成了 \\(s\cdot(x-o_x')+o_x',s\cdot(y-o_y')+o_y')\\) 。计算 A 点缩放后的图像因为元素基点移动而变化了的值，也就是点 A'' 到点 A' 的距离：
+也就是说，将基点 O 从 $(o_x, o_y)$，记增量为 $(\Delta{o_x},\Delta{o_y})$，导致了点 A 的变换结果，从 $(s\cdot(x-o_x)+o_x,s\cdot(y-o_y)+o_y)$ ，变成了$(s\cdot(x-o_x')+o_x',s\cdot(y-o_y')+o_y')$ 。计算 A 点缩放后的图像因为元素基点移动而变化了的值，也就是点 A'' 到点 A' 的距离：
 
 <p>
 $$
@@ -358,7 +359,7 @@ $$
 
 ### 消除修改 origin 位置带来的影响
 
-这样就解释得通了，在**双指落下的一瞬间，origin 坐标变化了 \\((\Delta{o_x},\Delta{o_y})\\)，而取任变换结果上的一点 X ，变化了 \\(((1-s)\cdot\Delta{o_x},(1-s)\cdot\Delta{o_y})\\)**。观察发现，这个值与点 X 自身的坐标没有任何关系，是 origin 移动距离决定的一个“定值”；也就是说，元素上的所有的点，同时产生了这端位移的变换效果。反映到界面上来，就是双指接触元素的瞬间，元素立刻“瞬移”一下。而随着手指不断改变位置，origin 不断被重设，于是造成了缩放元素完全不受控制的局面。
+这样就解释得通了，在**双指落下的一瞬间，origin 坐标变化了 $(\Delta{o_x},\Delta{o_y})$，而取任变换结果上的一点 X ，变化了 $((1-s)\cdot\Delta{o_x},(1-s)\cdot\Delta{o_y})$**。观察发现，这个值与点 X 自身的坐标没有任何关系，是 origin 移动距离决定的一个“定值”；也就是说，元素上的所有的点，同时产生了这端位移的变换效果。反映到界面上来，就是双指接触元素的瞬间，元素立刻“瞬移”一下。而随着手指不断改变位置，origin 不断被重设，于是造成了缩放元素完全不受控制的局面。
 
 要消除修改 origin 带来的负面影响，有 2 点需要做：
 
@@ -367,7 +368,7 @@ $$
 
 #### 进行修正
 
-之前的计算中，我们得到了元素发生了 \\(((1-s)\cdot\Delta{o_x},(1-s)\cdot\Delta{o_y})\\) 的平移，于是只需要在修改 origin 位置的同时，将位移量提前减去这个值即可。另外，我们将 origin 的修改频率从每个 touchmove 事件进行一次，减少到“完整的一次缩放交互”进行一次。
+之前的计算中，我们得到了元素发生了 $((1-s)\cdot\Delta{o_x},(1-s)\cdot\Delta{o_y})$ 的平移，于是只需要在修改 origin 位置的同时，将位移量提前减去这个值即可。另外，我们将 origin 的修改频率从每个 touchmove 事件进行一次，减少到“完整的一次缩放交互”进行一次。
 
 ```JavaScript
 // 增加 originHaveSet 全局变量，每次设置 origin 位置后设为 true
@@ -416,7 +417,3 @@ img.addEventListener('touchend', e => {
 ```
 
 完整的代码可以在我的 github 上获得：[html-drag-scale-demo](https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FWangLeto%2Fhtml-drag-scale-demo%2Fblob%2Fmaster%2Findex.html)。
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
