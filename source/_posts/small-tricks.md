@@ -8,12 +8,20 @@ tags: 其他
 
 目录：
 
+- chrome 选择超链接文字
 - chrome 删除 url 自动建议
 - chrome 跨设备同步标签页
 - wifi adb 调试
 - Intel 核显右键集成菜单删除与找回
+- 谁唤醒了我的电脑
 
 <!--more-->
+
+## chrome 选择超链接文字
+
+按住 `ALT` 键。
+
+
 
 ## chrome 删除 url 自动建议
 
@@ -55,15 +63,42 @@ adb connect host-ip:3456
 
 多少年了也没有变化，该说英特尔是守旧呢还是兼容呢（喵喵喵？）
 
-需要管理员权限运行：
+管理员权限运行：
 
 ```powershell
 # 删除右键集成
 regsvr32 /u igfxdtcm.dll
+
 # 找回右键集成菜单
 regsvr32 igfxdtcm.dll
 ```
 
 
 
-to be continue...
+## 谁唤醒了我的电脑
+
+查看可以唤醒电脑的设备：
+
+```powershell
+powercfg /devicequery wake_armed
+```
+
+禁用某个列出的设备（管理员权限）：
+
+```powershell
+powercfg /devicedisablewake "设备名"
+```
+
+或者：在系统日志里搜索“Power-Troubleshooter”。
+
+如果唤醒源是unknown的话，有可能是计划任务。查找可以唤醒电脑的计划任务然后处理：
+
+```powershell
+Get-ScheduledTask | where {$_.settings.waketorun}
+```
+
+来源：[如何禁止鼠标唤醒Win10？ - Kenny的回答 - 知乎](https://www.zhihu.com/question/48154015/answer/162508741)。
+
+
+
+*to be continue...*
