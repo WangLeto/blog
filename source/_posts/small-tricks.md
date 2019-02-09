@@ -77,6 +77,12 @@ regsvr32 igfxdtcm.dll
 
 ## 谁唤醒了我的电脑
 
+查看上一次唤醒原因：
+
+```powershell
+powercfg –lastwake
+```
+
 查看可以唤醒电脑的设备：
 
 ```powershell
@@ -88,6 +94,8 @@ powercfg /devicequery wake_armed
 ```powershell
 powercfg /devicedisablewake "设备名"
 ```
+
+注意，有时候鼠标会注册两个设备，一个 mouse ，一个 keyboard，需要同时禁用两个…
 
 或者：在系统日志里搜索“Power-Troubleshooter”。
 

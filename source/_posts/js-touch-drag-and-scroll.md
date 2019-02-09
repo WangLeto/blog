@@ -5,10 +5,6 @@ tags: [JavaScript]
 mathjax: true
 ---
 
-最终效果如下：
-
-![img](https://user-gold-cdn.xitu.io/2019/1/31/168a32ccd6aaff9a?imageslim)
-
 可以点击查看 [在线演示](https://link.juejin.im?target=http%3A%2F%2Fblog.letow.top%2Fhtml-drag-scale-demo%2F)，以及 [完整代码](https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FWangLeto%2Fhtml-drag-scale-demo%2Fblob%2Fmaster%2Findex.html)。
 
 本文也发布在了掘金上，链接：https://juejin.im/post/5c52b2b26fb9a049fb44168e。
