@@ -18,6 +18,7 @@ tags: 其他
 - wifi adb 调试
 - Intel 核显右键集成菜单删除与找回
 - 谁唤醒了我的电脑
+- 移除删除不掉的语言包
 
 <!--more-->
 
@@ -152,6 +153,38 @@ Get-ScheduledTask | where {$_.settings.waketorun}
 ```
 
 来源：[如何禁止鼠标唤醒Win10？ - Kenny的回答 - 知乎](https://www.zhihu.com/question/48154015/answer/162508741)。
+
+
+
+## 移除删除不掉的语言包
+
+来源：[Fix: Cannot remove a Language from Windows 10](https://www.thewindowsclub.com/cannot-remove-language-windows-10)
+
+使用 powershell，首先查看安装的语言包信息：
+
+```powershell
+Get-WinUserLanguageList
+```
+
+输出类似于：
+
+```
+LanguageTag     : zh-Hans-CN
+Autonym         : 中文(中华人民共和国)
+EnglishName     : Chinese
+balabala....
+```
+
+记下目标语言包的 LanguageTag，然后运行：
+
+```powershell
+$LangList = Get-WinUserLanguageList
+$MarkedLang = $LangList | where LanguageTag -eq "所要删除的语言包 tag"
+$LangList.Remove($MarkedLang)
+Set-WinUserLanguageList $LangList -Force
+```
+
+好了。
 
 
 
