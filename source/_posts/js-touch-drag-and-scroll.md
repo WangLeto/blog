@@ -7,7 +7,7 @@ mathjax: true
 
 可以点击查看 [在线演示](https://link.juejin.im?target=http%3A%2F%2Fblog.letow.top%2Fhtml-drag-scale-demo%2F)，以及 [完整代码](https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FWangLeto%2Fhtml-drag-scale-demo%2Fblob%2Fmaster%2Findex.html)。
 
-本文也发布在了掘金上，链接：https://juejin.im/post/5c52b2b26fb9a049fb44168e。
+本文也发布在了掘金上，链接：https://juejin.im/post/5c52b2b26fb9a049fb44168e 。
 
 ## CSS transform
 
@@ -413,3 +413,37 @@ img.addEventListener('touchend', e => {
 ```
 
 完整的代码可以在我的 github 上获得：[html-drag-scale-demo](https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FWangLeto%2Fhtml-drag-scale-demo%2Fblob%2Fmaster%2Findex.html)。
+
+
+
+**更新**
+
+如果遇到浏览器因为手势缩放、滚动的问题，参考如下代码：
+
+```javascript
+img.addEventListener('touchmove', e => {
+  // ...
+  e.preventDefault();
+};
+
+// 检查是否支持 options 写法
+let passiveSupport = false;
+try {
+  let option = Object.defineProperty({}, 'passive', {
+    get: () => {
+      passiveSupport = true;
+    }
+  });
+  window.addEventListener('passivetest', null, option);
+} catch (err) {}
+
+document.body.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+}, passiveSupport ? { passive: false } : false);
+```
+
+如果对于 passive 的写法感到奇怪，请移步此文：[关于passive event listener的一次踩坑](https://juejin.im/post/5ad804c1f265da504547fe68)；以及 addEventListener 的官方文档：[EventTarget.addEventListener()](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener)。
+
+
+
+另外突然发现自己把文章名称写错了，应该是 `scale` 而不是 `scroll`……从 url 可以看出来。
