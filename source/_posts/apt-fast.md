@@ -16,3 +16,9 @@ $ sudo apt install apt-fast
 然后出现安装的配置界面，选择 “apt” →  “5（默认）” →  “No”，确认完成。（注：虽然没有确凿证据，但是如果你习惯使用 `apt-get` 命令而不是直接使用 `apt` 命令的话[事实上 apt 命令更先进]，建议在第一项配置中选择 “apt-get”）
 
 然后我继续使用 `apt upgrade`，此时正在使用手机 4G 热点，速度飙升到了 6M/s。
+
+---
+
+**2019.3.24 更新**
+
+今天尝试在 Windows10 上的 wsl 子系统上安装 apt-fast，发现原本的 ppa 无效了，换为 `sudo add-apt-repository ppa:apt-fast/stable` 解决。
