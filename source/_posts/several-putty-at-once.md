@@ -19,4 +19,4 @@ start putty -load 办公室
 start putty -load 阿里云
 ```
 
-至于怎么样保存 ssh 连接文件，无需输入密码进行登陆，这里先挖坑，以后有空填。
+结合设置 `.ssh/authorized_keys` 可以实现免密登录，关于这点有很多教程，我就不再拾人牙慧了，比如可以参考：[Putty使用密钥自动登陆SSH](https://blog.51cto.com/callmepeanut/1336358)。
