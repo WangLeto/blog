@@ -175,6 +175,7 @@ site_state: true
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/WangLeto || github
+  掘金: https://juejin.im/user/5a8a698cf265da4e896ad8ca
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
@@ -191,6 +192,7 @@ social_icons:
   icons_only: false
   transition: false
   Github: github
+  
 
 # Follow me on GitHub banner in right-top corner.
 # Usage: `permalink || title`
@@ -814,7 +816,7 @@ reading_progress:
 # Use velocity to animate everything.
 motion:
   enable: true
-  async: false
+  async: true
   transition:
     # Transition variants:
     # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
