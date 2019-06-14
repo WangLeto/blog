@@ -35,7 +35,7 @@ chrome 自动记录 url 并适时补全，但是有时候网站地址变了，�
 
 - 输入关键字
 - 方向键找到过时的 url
-- `shift + delete` 删除之
+- `shift + delete` 删除之（mac 上是 fn + shift + delete）
 
 因为相关的 url 可能会很多，所以要多来几次才能删除干净。
 
